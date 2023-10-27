@@ -1,0 +1,25 @@
+import { useState } from 'react';
+
+export default function FruitPicker() {
+    const [selectedFruit, setSelectedFruit] = useState('orange');     // Declare a state variable...
+    
+    return (
+      <>
+        <label>
+          Pick a fruit:
+          <select
+            value={selectedFruit}                                   // ...force the select's value to match the state variable...
+            onChange={e => setSelectedFruit(e.target.value)}      // ... and update the state variable on any change!
+          >
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="orange">Orange</option>
+          </select>
+        </label>
+        <hr />
+        <p>Your favorite fruit: {selectedFruit}</p>
+    
+      </>
+
+        );
+    }
